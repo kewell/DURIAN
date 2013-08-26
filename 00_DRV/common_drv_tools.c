@@ -67,12 +67,12 @@ int main (int argc, char **argv)
     pcArgs = argv[3];
     ucArg = (unsigned char)atoi(argv[3]);
 
-    printf("ioctl(%s, 0x%x, %s)", argv[1], iCmd, pcArgs);
+    //printf("ioctl(%s, 0x%x, %s)", argv[1], iCmd, pcArgs);
 
     //iRet = ioctl(fd, iCmd, pcArgs);
     iRet = ioctl(fd, iCmd, &ucArg);
     {
-        printf(" = %d\n", iRet);
+        //printf(" = %d\n", iRet);
     }
 
     close(fd);
