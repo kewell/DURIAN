@@ -1,0 +1,50 @@
+----------------------------10.4.13.63 no noise----------------------------------
+-----AO DEV STATUS-------------------------------------------------------------------------------------------------------
+AoDev      IntCnt FrmTime  MaxFrmTime  DMAChn  DMAReq TranLen IsrTime  MaxIsrTime   DMAPhy0   DMAPhy1 CurDMAPhy PinPon    ErrCnt
+    4         234   40002       40285       5       5    2560      58          82  8defb000  8defba00  8defb010      1         0
+
+-----AO CHN STATUS-------------------------------------------------------------------------------------------------------
+AoDev   AoChn   State    Read   Write      BufEmp  u32Data0  u32Data1  bResmp  PoiNum   SampR ResmpType
+    4       0  enable      34      38           0  62005e00  5e006200 disable       0  (null)    (null)
+
+ChnId  PlType BufSize    Attr     SendCnt      GetCnt      PutCnt        
+    0    g726       8                2145        2145        2145        
+    1   g711a       8                5301        5300        5300--------------------
+----------------------------10.4.13.63 no noise----------------------------------
+    
+----------------------------IE TALK NOISE----------------------------------
+    
+-----AO DEV STATUS-------------------------------------------------------------------------------------------------------
+AoDev      IntCnt FrmTime  MaxFrmTime  DMAChn  DMAReq TranLen IsrTime  MaxIsrTime   DMAPhy0   DMAPhy1 CurDMAPhy PinPon    ErrCnt
+    4         841   39998       41097       5       5    2560      53          95  8defb000  8defba00  8defba10      0         0
+
+-----AO CHN STATUS-------------------------------------------------------------------------------------------------------
+AoDev   AoChn   State    Read   Write      BufEmp  u32Data0  u32Data1  bResmp  PoiNum   SampR ResmpType
+    4       0  enable      41      43           0         0         0 disable       0  (null)    (null)
+
+ChnId  PlType BufSize    Attr     SendCnt      GetCnt      PutCnt        
+    0    g726       8                1905        1905        1905--------        
+    1   g711a       8                4661        4661        4661        
+----------------------------IE TALK NOISE----------------------------------
+
+16:12:39.068   @2073 ENCODE KEWELL set Mode=0
+16:12:39.068   @2095 ENCODE MP4Sys_SetTalkingEnable enable=1
+16:12:39.068   @2124 ENCODE KEWELL Set talk status as 1
+16:12:39.068   @1880 EN_LIB HY_Enc_StopAudioPreview CALLED
+16:12:39.068   @0607 OUTDEV HY_DRV_SetAudioPreview CALLED
+16:12:39.099   @4826 HI_MPP Change Adec from 1 to 0 bTalk=1
+16:12:39.120   @1069 HI_MPP HI_MPP_AO_BindAdec   CALLED, AoDev=4 AoChn=0 AdChn=0
+
+# 16:12:41.673   @2095 ENCODE MP4Sys_SetTalkingEnable enable=0
+16:12:41.673   @2124 ENCODE KEWELL Set talk status as 0
+16:12:41.674   @1853 EN_LIB HY_Enc_StartAudioPreview CALLED
+16:12:41.674   @0607 OUTDEV HY_DRV_SetAudioPreview CALLED
+16:12:41.674   @0770 NT_STR MP4Sys_EncStopAudioPreview CALLED
+16:12:41.674   @1880 EN_LIB HY_Enc_StopAudioPreview CALLED
+16:12:41.674   @0607 OUTDEV HY_DRV_SetAudioPreview CALLED
+16:12:41.674   @0721 NT_STR MP4Sys_EncStartAudioPreview CALLED
+16:12:41.674   @0755 NT_STR Audio PreChn_2
+16:12:41.674   @1853 EN_LIB HY_Enc_StartAudioPreview CALLED
+16:12:41.674   @0607 OUTDEV HY_DRV_SetAudioPreview CALLED
+16:12:41.680   @4826 HI_MPP Change Adec from 0 to 1 bTalk=0
+16:12:41.700   @1069 HI_MPP HI_MPP_AO_BindAdec   CALLED, AoDev=4 AoChn=0 AdChn=1
