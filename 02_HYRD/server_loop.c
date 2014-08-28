@@ -67,6 +67,7 @@ double tval ()
 
     t1 = (double) _tstart.tv_sec + (double) _tstart.tv_usec / (1000 * 1000);
     t2 = (double) _tend.tv_sec + (double) _tend.tv_usec / (1000 * 1000);
+    printf("T_Start=%10.10f T_end=%10.10f   ", t1, t2);
     return (t2 - t1);
 }
 
@@ -135,8 +136,9 @@ void start_send (int socket_send)
     }
     tend ();
 
-    total_time += tval();
-    total_size += g_BUFFER_CNT * BUFFER_LEN  /(1024*1024);
+    total_time = tval();
+    printf("Totoal time=%10.10f\n", total_time);
+    total_size = BUFFER_LEN / 1024 * g_BUFFER_CNT / 1024;
 
     printf("(%03d) Total send %dMB to remote client in %3.3f seconds , Speed = %.2f Mbps \n", \
             send_num,total_size, total_time, ((double)total_size)*8 / (total_time));
@@ -144,7 +146,7 @@ void start_send (int socket_send)
     total_time = 0;
     total_size = 0;
     send_num ++;
-
+#if 0
     current_time = gettime();
     if ((current_time - last_time) >= g_TIME_INTERVAL && 0)  // Change by WENJING 2014-04-22 16:45:26 
     {
@@ -161,7 +163,7 @@ void start_send (int socket_send)
     	printf ("(%d)send %dMB to remote client in %3.3f seconds = %.2f Mbps \n", \
     		      iThread, g_BUFFER_CNT * BUFFER_LEN  /(1024*1024), tval(), g_BUFFER_CNT * BUFFER_LEN /(1024* 1024) / tval());
     }
-
+#endif
     sem_post (&m_hSem);
 }
 
@@ -292,5 +294,3 @@ void PRINT_INFO(char *string)
 #endif
 
 }
-
-
